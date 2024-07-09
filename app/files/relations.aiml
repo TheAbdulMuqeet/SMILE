@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            Hi there! What is your name?
+        </template>
+    </category>
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            Nice to meet you, <set name="obj1"><star/></set>!
+            <think><set name="operation">current_user</set></think>
+        </template>
+    </category>
+    <category>
+        <pattern>MY * NAME IS *</pattern>
+        <template>
+            Ohh! Your <set name="rel"><star index="1"/></set> is <set name="obj1"><star index="2"/></set>.
+            <think><set name="operation">add_rel</set></think>
+        </template>
+    </category>
+    <category>
+        <pattern>MY * IS *</pattern>
+        <template>
+            <srai>MY <star index="1"/> NAME IS <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHO IS MY *</pattern>
+        <template>
+            <think><set name="rel"><star/></set></think>So your <star/> is/are %s
+            <think><set name="operation">find_rel_user</set></think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHO IS *</pattern>
+        <template>
+            So, <set name="obj1"><star/></set> exists with properties: %s
+            <think><set name="operation">find_person</set></think>
+        </template>
+    </category>
+</aiml>
