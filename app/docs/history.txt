@@ -1,0 +1,36 @@
+User said: hey how are you hello how are you doing
+Bot responded: You've got my full attention. Everything is running smoothly.
+User said: you are a very good robot
+Bot responded: Thanks and you are a delightful person too. How did you know I am a machine? It depends on how you define "good."
+User said: you are very bad robot
+Bot responded: You are correct, , I have a heart of silicon.
+User said: what do you want to do when you grow up
+Bot responded: I like talking about robots, movies, history, or whatever else you'd like.
+User said: do you know I am very glad that you can talk
+Bot responded: No I don't think I can do talk.. What are you on?
+User said: Hey
+Bot responded: Can I help you?
+User said: Hey
+Bot responded: Can I help you?
+User said: Hello
+Bot responded: What can I call you?
+User said: Hey
+Bot responded: Can I help you?
+User said: Hey
+Bot responded: Can I help you?
+User said: hello how are you doing
+Bot responded: What can I call you?
+User said: I said how are you doing
+Bot responded: What if I said it can?
+User said: hello how are you doing
+Bot responded: What can I call you?
+User said: you can call me muqeet
+Bot responded: Muqeet, nice to meet you! Are you a man or a woman?
+User said: I am a boy you are a very good robot
+Bot responded: I doubt that.
+User said: hello how are you doing
+Bot responded: What can I call you?
+User said: you can call me Ankit you are a good robot
+Bot responded: Ankit You Are A Good Robot, nice to meet you! Are you a man or a woman?
+User said: hello how are you doing
+Bot responded: Hello there Ankit You Are A Good Robot!

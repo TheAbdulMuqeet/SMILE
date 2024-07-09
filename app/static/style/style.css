@@ -1,0 +1,425 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    transition-duration: 0.2s;
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8b8b8b !important;
+}
+
+:root {
+    --primary: #3185db;
+    --secondary: #bfd9ff;
+    --primary-hover: #004791;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #afafaf !important;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar {
+    border-radius: 10px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--secondary);
+
+    font-size: 1em;
+    letter-spacing: 0.1px;
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    -webkit-font-smoothing: antialiased;
+}
+
+#submit_button svg{
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+
+.messages {
+    padding-top: 30px;
+}
+
+li.sent {
+    padding-right: 5px;
+}
+
+#avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+#avatar>div {
+    flex-direction: column;
+    display: flex;
+    line-height: 1em;
+    gap: 8px;
+}
+
+#avatar p {
+    font-weight: 500;
+    font-size: 1.4em;
+}
+
+#avatar span {
+    font-weight: 300;
+    font-size: 1em;
+}
+
+li.replies {
+    padding-left: 10px;
+}
+
+.messages li p {
+    box-shadow: 0 10px 25px #00000029;
+    word-wrap: break-word;
+}
+
+#frame {
+    width: 60%;
+    min-width: 360px;
+    max-width: 1000px;
+    height: 92vh;
+    min-height: 300px;
+    max-height: 720px;
+    border-radius: 10px;
+    position: relative;
+    background-color: #efefef;
+    box-shadow: 0 0 30px #0000002b;
+}
+
+#frame::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('static/bot_pic.jpg') no-repeat center center/cover;
+    background-size: 40%;
+    top: 0;
+    filter: opacity(0.3);
+    z-index: -1;
+}
+
+@media screen and (max-width: 360px) {
+    #frame {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+#frame .content {
+    float: right;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#frame .content .contact-profile {
+    width: 100%;
+    background: #f5f5f5;
+}
+
+.contact-profile {
+    box-shadow: 0 10px 20px #00000014;
+}
+
+#frame .content .contact-profile img,
+.sent img {
+    filter: contrast(1.2) brightness(0.9);
+}
+
+.message-input {
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+#frame .content .contact-profile img {
+    width: 50px;
+    z-index: 9999999999;
+    height: 50px;
+    border-radius: 50%;
+}
+
+body:has(#avatar img:hover) #frame .content .contact-profile img {
+    transform: scale(3.5) translateY(10px);
+    box-shadow: 0 20px 30px #000000bd;
+}
+body:has(#avatar img:hover){
+    background-color: #8b94a0;
+}
+
+body:has(#avatar img:hover) #avatar div, 
+body:has(#avatar img:hover) .messages, 
+body:has(#avatar img:hover) .message-input {
+    filter: opacity(0.3) saturate(0.5);
+}
+
+#avatar p {
+    float: left;
+}
+
+#frame .content .contact-profile .social-media {
+    float: right;
+}
+
+#frame .content .contact-profile .social-media i {
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+#frame .content .contact-profile .social-media i:nth-last-child(1) {
+    margin-right: 20px;
+}
+
+#frame .content .contact-profile .social-media i:hover {
+    color: #435f7a;
+}
+
+#frame .content .messages {
+    height: auto;
+    min-height: calc(100% - 110px);
+    max-height: calc(100% - 110px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2;
+    position: relative;
+}
+
+@media screen and (max-width: 735px) {
+    #frame .content .messages {
+        max-height: calc(100% - 105px);
+    }
+}
+
+#frame .content .messages::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+#frame .content .messages::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#frame .content .messages ul li {
+    display: inline-block;
+    margin: 8px 15px 5px 15px;
+    width: calc(100% - 25px);
+    font-size: 0.9em;
+}
+
+#frame .content .messages ul li:nth-last-child(1) {
+    margin-bottom: 20px;
+}
+
+#frame .content .messages ul li.replies img {
+    margin: 6px 8px 0 0;
+}
+
+#frame .content .messages ul li.replies p {
+    background: #f5f5f5;
+    border-top-left-radius: 0;
+}
+
+#frame .content .messages ul li.replies p:hover {
+    background-color: #d2d2d2;
+}
+
+#frame .content .messages ul li.sent img {
+    float: right;
+    margin: 6px 0 0 8px;
+    border: 1px solid grey;
+}
+
+#frame .content .messages ul li.sent p {
+    color: #f5f5f5;
+    background: var(--primary);
+    float: right;
+    border-top-right-radius: 0;
+}
+
+#frame .content .messages ul li.sent p:hover {
+    background-color: var(--primary-hover);
+}
+
+#frame .content .messages ul li img {
+    width: 22px;
+    border-radius: 50%;
+    float: left;
+}
+
+#frame .content .messages ul li p {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 205px;
+    line-height: 130%;
+}
+
+@media screen and (min-width: 735px) {
+    #frame .content .messages ul li p {
+        max-width: 300px;
+    }
+}
+
+.message-input {
+    background-color: white;
+}
+
+#frame .content .message-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+#frame .content .message-input .wrap {
+    position: relative;
+}
+
+
+#frame .content .message-input .wrap input{
+    padding-left: 25px !important;
+}
+
+#frame .content .message-input .wrap input {
+    border: none;
+    width: calc(100% - 50px);
+    padding: 15px 10px;
+    font-size: 0.9em;
+    color: #32465a;
+}
+
+@media screen and (max-width: 735px) {
+    #frame .content .message-input .wrap input {
+        padding: 15px 10px;
+    }
+}
+
+#frame .content .message-input .wrap input:focus {
+    outline: none;
+}
+
+#frame .content .message-input .wrap .attachment {
+    position: absolute;
+    right: 60px;
+    z-index: 4;
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #435f7a;
+    opacity: .5;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 735px) {
+    #frame .content .message-input .wrap .attachment {
+        margin-top: 17px;
+        right: 65px;
+    }
+}
+
+#frame .content .message-input .wrap .attachment:hover {
+    opacity: 1;
+}
+
+#frame .content .message-input .wrap button {
+    border: 1px solid var(--primary);
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    cursor: pointer;
+    background: var(--primary);
+    color: #f5f5f5;
+}
+
+#frame .content .message-input .wrap button:hover {
+    border-color: var(--primary-hover);
+}
+
+@media screen and (max-width: 735px) {
+    #frame .content .message-input .wrap button {
+        padding: 16px 0;
+    }
+}
+
+#frame .content .message-input .wrap button:hover {
+    background: var(--primary-hover);
+}
+
+#frame .content .message-input .wrap button:focus {
+    outline: none;
+}
+
+#contact_profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-radius: 10px 10px 0 0;
+}
+
+.messages img {
+    display: none;
+}
+
+#submit-area{
+    display: flex;
+    height: 50px;
+}
+
+#uploadArea {
+    display: none; 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999999;
+}
+
+#uploadArea.show {
+    display: flex;
+}
+
+#operations{
+    display: flex;
+    gap: 10px;
+}
+
+.op-btn{
+    height: 100%;
+    border-radius: 5px;
+    background-color: var(--primary);
+    border: none;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 7px;
+    font-size: 15px;
+}
+
+.op-btn svg{
+    width: 18px;
+    fill: white;
+}
+
+.op-btn:hover{
+    background-color: var(--primary-hover);
+}
