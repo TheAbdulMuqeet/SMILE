@@ -57,7 +57,7 @@ def register():
         session["authenticated"] = True
         bot.uname = name
         bot.set_sid(request.form.get("sid"))
-        bot.chat_counter = request.form.get("counter")
+        bot.chat_counter = int(request.form.get("counter"))
         login_user(user)
         return redirect("/")
     return render_template("signup.html")
